@@ -15,8 +15,12 @@ import {
   ZapIcon,
   BarChart3Icon,
   HeadphonesIcon,
+  CalendarIcon,
+  SparklesIcon,
+  RocketIcon,
 } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
@@ -113,7 +117,7 @@ export const ElementHome = (): JSX.Element => {
         "5GB storage",
         "Basic integrations",
       ],
-      buttonText: "Start Free Trial",
+      buttonText: "Book a Demo",
       popular: false,
       badge: "Most Popular for Startups",
     },
@@ -207,18 +211,22 @@ export const ElementHome = (): JSX.Element => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2">
-                  Start Free Trial
-                  <ArrowRightIcon size={20} />
-                </Button>
+                <Link to="/get-started">
+                  <Button className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-3 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                    <CalendarIcon size={20} className="group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="relative z-10">Book a Demo</span>
+                    <SparklesIcon size={16} className="group-hover:scale-125 transition-transform duration-300" />
+                  </Button>
+                </Link>
                 <Button
                   variant="outline"
-                  className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center gap-3"
+                  className="group border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 flex items-center gap-3"
                 >
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                    <PlayIcon size={16} className="text-white ml-0.5" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <PlayIcon size={18} className="text-white ml-0.5" />
                   </div>
-                  Watch Demo
+                  <span>Watch Demo</span>
                 </Button>
               </div>
               
@@ -465,8 +473,10 @@ export const ElementHome = (): JSX.Element => {
                 ))}
               </div>
               
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3">
-                Explore Analytics <ArrowRightIcon size={20} />
+              <Button className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-3">
+                <BarChart3Icon size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                Explore Analytics 
+                <ArrowRightIcon size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
             
@@ -641,16 +651,18 @@ export const ElementHome = (): JSX.Element => {
                       ))}
                     </ul>
                   </div>
-                  <Button
-                    className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-200 ${
-                      plan.popular
-                        ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl"
-                        : "border-2 border-gray-300 text-gray-700 hover:bg-gray-50"
-                    }`}
-                    variant={plan.popular ? "default" : "outline"}
-                  >
-                    {plan.buttonText}
-                  </Button>
+                  <Link to="/get-started">
+                    <Button
+                      className={`w-full py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1 ${
+                        plan.popular
+                          ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-2xl"
+                          : "border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:shadow-lg"
+                      }`}
+                      variant={plan.popular ? "default" : "outline"}
+                    >
+                      {plan.buttonText}
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -682,7 +694,8 @@ export const ElementHome = (): JSX.Element => {
                     placeholder="Enter your email address" 
                     className="flex-1 px-6 py-4 rounded-xl border-0 bg-white/10 backdrop-blur-sm text-white placeholder-blue-200 focus:bg-white/20 text-lg"
                   />
-                  <Button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl">
+                  <Button className="group bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-2">
+                    <RocketIcon size={18} className="group-hover:scale-110 transition-transform duration-300" />
                     Subscribe Now
                   </Button>
                 </div>
