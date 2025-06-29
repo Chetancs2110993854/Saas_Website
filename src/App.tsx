@@ -6,6 +6,7 @@ import { Features } from './screens/Features/Features';
 import { Blogs } from './screens/Blogs/Blogs';
 import { Pricing } from './screens/Pricing/Pricing';
 import { ContactUs } from './screens/ContactUs/ContactUs';
+import { GetStarted } from './screens/GetStarted/GetStarted';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/get-started" element={<GetStarted />} />
       </Routes>
     </Router>
   );

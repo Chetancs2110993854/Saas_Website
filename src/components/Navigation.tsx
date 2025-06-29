@@ -79,9 +79,11 @@ export const Navigation = () => {
           <Button variant="ghost" className="text-gray-700 hover:text-blue-600 font-medium">
             Sign In
           </Button>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
-            Get Started Free
-          </Button>
+          <Link to="/get-started">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
+              Get Started Free
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>
