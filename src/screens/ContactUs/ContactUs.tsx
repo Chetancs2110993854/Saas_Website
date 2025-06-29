@@ -20,38 +20,22 @@ import React, { useState } from "react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
-import { Input } from "../../components/ui/input";
 import { Navigation } from "../../components/Navigation";
+import { ContactForm } from "../../components/forms/ContactForm";
 
 export const ContactUs = (): JSX.Element => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    subject: "",
-    message: "",
-    inquiryType: "general"
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   const contactMethods = [
     {
       title: "Email Support",
-      description: "Get help from our support team",
-      contact: "support@quickspace.com",
+      description: "Get help from our online presence experts",
+      contact: "support@starboost.com",
       icon: <MailIcon size={32} className="text-blue-600" />,
       color: "from-blue-50 to-blue-100",
       responseTime: "Within 24 hours"
     },
     {
       title: "Phone Support",
-      description: "Speak directly with our experts",
+      description: "Speak directly with our digital marketing team",
       contact: "+1 (555) 123-4567",
       icon: <PhoneIcon size={32} className="text-green-600" />,
       color: "from-green-50 to-green-100",
@@ -59,7 +43,7 @@ export const ContactUs = (): JSX.Element => {
     },
     {
       title: "Live Chat",
-      description: "Instant help when you need it",
+      description: "Instant help when you need it most",
       contact: "Available 24/7",
       icon: <MessageSquareIcon size={32} className="text-purple-600" />,
       color: "from-purple-50 to-purple-100",
@@ -67,8 +51,8 @@ export const ContactUs = (): JSX.Element => {
     },
     {
       title: "Schedule a Call",
-      description: "Book a personalized demo",
-      contact: "calendly.com/quickspace",
+      description: "Book a personalized strategy session",
+      contact: "calendly.com/starboost",
       icon: <HeadphonesIcon size={32} className="text-orange-600" />,
       color: "from-orange-50 to-orange-100",
       responseTime: "30-60 min sessions"
@@ -81,7 +65,7 @@ export const ContactUs = (): JSX.Element => {
       address: "123 Innovation Drive, Suite 100",
       zipCode: "San Francisco, CA 94105",
       phone: "+1 (555) 123-4567",
-      email: "sf@quickspace.com",
+      email: "sf@starboost.com",
       isHeadquarters: true
     },
     {
@@ -89,7 +73,7 @@ export const ContactUs = (): JSX.Element => {
       address: "456 Business Avenue, Floor 25",
       zipCode: "New York, NY 10001",
       phone: "+1 (555) 234-5678",
-      email: "ny@quickspace.com",
+      email: "ny@starboost.com",
       isHeadquarters: false
     },
     {
@@ -97,7 +81,7 @@ export const ContactUs = (): JSX.Element => {
       address: "789 Tech Street, Level 12",
       zipCode: "London, UK EC1A 1BB",
       phone: "+44 20 1234 5678",
-      email: "london@quickspace.com",
+      email: "london@starboost.com",
       isHeadquarters: false
     },
     {
@@ -105,18 +89,9 @@ export const ContactUs = (): JSX.Element => {
       address: "321 Digital Plaza, 8th Floor",
       zipCode: "Tokyo, Japan 100-0001",
       phone: "+81 3 1234 5678",
-      email: "tokyo@quickspace.com",
+      email: "tokyo@starboost.com",
       isHeadquarters: false
     }
-  ];
-
-  const inquiryTypes = [
-    { value: "general", label: "General Inquiry" },
-    { value: "sales", label: "Sales & Pricing" },
-    { value: "support", label: "Technical Support" },
-    { value: "partnership", label: "Partnership" },
-    { value: "press", label: "Press & Media" },
-    { value: "careers", label: "Careers" }
   ];
 
   const supportStats = [
@@ -146,7 +121,7 @@ export const ContactUs = (): JSX.Element => {
               </span>
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Have questions about QuickSpace? Need help getting started? Our expert team is ready to assist you every step of the way.
+              Have questions about boosting your online presence? Need help getting started with StarBoost? Our expert team is ready to assist you every step of the way.
             </p>
             
             {/* Quick Stats */}
@@ -174,7 +149,7 @@ export const ContactUs = (): JSX.Element => {
               <span className="text-blue-600">Contact Method</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              We offer multiple ways to get in touch. Pick the one that works best for you.
+              We offer multiple ways to get in touch. Pick the one that works best for your online presence needs.
             </p>
           </div>
           
@@ -224,107 +199,7 @@ export const ContactUs = (): JSX.Element => {
                 
                 <Card className="border-0 shadow-xl bg-white rounded-2xl">
                   <CardContent className="p-8">
-                    <form className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Full Name *
-                          </label>
-                          <Input
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            placeholder="John Doe"
-                            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500"
-                            required
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Email Address *
-                          </label>
-                          <Input
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            placeholder="john@company.com"
-                            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500"
-                            required
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Company
-                          </label>
-                          <Input
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            placeholder="Your Company"
-                            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Inquiry Type
-                          </label>
-                          <select
-                            name="inquiryType"
-                            value={formData.inquiryType}
-                            onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 bg-white"
-                          >
-                            {inquiryTypes.map((type) => (
-                              <option key={type.value} value={type.value}>
-                                {type.label}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Subject *
-                        </label>
-                        <Input
-                          name="subject"
-                          value={formData.subject}
-                          onChange={handleInputChange}
-                          placeholder="How can we help you?"
-                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500"
-                          required
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Message *
-                        </label>
-                        <textarea
-                          name="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          placeholder="Tell us more about your inquiry..."
-                          rows={5}
-                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 resize-none"
-                          required
-                        />
-                      </div>
-                      
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                        Send Message
-                        <SendIcon size={20} />
-                      </Button>
-                      
-                      <p className="text-sm text-gray-500 text-center">
-                        We'll get back to you within 24 hours. For urgent matters, please call us directly.
-                      </p>
-                    </form>
+                    <ContactForm />
                   </CardContent>
                 </Card>
               </div>
@@ -362,14 +237,14 @@ export const ContactUs = (): JSX.Element => {
                           <UsersIcon size={14} className="text-white" />
                         </div>
                         <div className="bg-blue-50 p-3 rounded-lg rounded-tl-none max-w-xs">
-                          <p className="text-sm text-gray-700">Hi! How can I help you today?</p>
+                          <p className="text-sm text-gray-700">Hi! How can I help boost your online presence today?</p>
                           <span className="text-xs text-gray-500">Support Team • 2 min ago</span>
                         </div>
                       </div>
                       
                       <div className="flex items-start gap-3 justify-end">
                         <div className="bg-gray-100 p-3 rounded-lg rounded-tr-none max-w-xs">
-                          <p className="text-sm text-gray-700">I need help setting up my account</p>
+                          <p className="text-sm text-gray-700">I need help with SEO optimization</p>
                           <span className="text-xs text-gray-500">You • 1 min ago</span>
                         </div>
                         <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
@@ -382,7 +257,7 @@ export const ContactUs = (): JSX.Element => {
                           <UsersIcon size={14} className="text-white" />
                         </div>
                         <div className="bg-blue-50 p-3 rounded-lg rounded-tl-none max-w-xs">
-                          <p className="text-sm text-gray-700">I'd be happy to help! Let me guide you through the setup process.</p>
+                          <p className="text-sm text-gray-700">Perfect! I'd be happy to help you improve your search rankings.</p>
                           <span className="text-xs text-gray-500">Support Team • Just now</span>
                         </div>
                       </div>
@@ -391,12 +266,12 @@ export const ContactUs = (): JSX.Element => {
                     {/* Quick Actions */}
                     <div className="grid grid-cols-2 gap-3">
                       <button className="bg-gray-50 p-3 rounded-lg text-left hover:bg-gray-100 transition-colors">
-                        <div className="text-sm font-medium text-gray-900">Quick Setup</div>
-                        <div className="text-xs text-gray-600">Get started in 5 min</div>
+                        <div className="text-sm font-medium text-gray-900">SEO Audit</div>
+                        <div className="text-xs text-gray-600">Free analysis</div>
                       </button>
                       <button className="bg-gray-50 p-3 rounded-lg text-left hover:bg-gray-100 transition-colors">
-                        <div className="text-sm font-medium text-gray-900">Video Call</div>
-                        <div className="text-xs text-gray-600">Schedule demo</div>
+                        <div className="text-sm font-medium text-gray-900">Strategy Call</div>
+                        <div className="text-xs text-gray-600">Book demo</div>
                       </button>
                     </div>
                   </div>
@@ -416,7 +291,7 @@ export const ContactUs = (): JSX.Element => {
                       <ClockIcon size={16} className="text-blue-600" />
                       <div className="text-xs text-gray-600 font-medium">Response</div>
                     </div>
-                    <div className="text-lg font-bold text-gray-900">&lt; 2 min</div>
+                    <div className="text-lg font-bold text-gray-900">< 2 min</div>
                     <div className="text-xs text-blue-600 font-medium">Average</div>
                   </div>
                 </div>
@@ -437,7 +312,7 @@ export const ContactUs = (): JSX.Element => {
               Worldwide
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              With offices across the globe, we're always here to support you no matter where you are.
+              With offices across the globe, we're always here to support your online presence no matter where you are.
             </p>
           </div>
           
@@ -498,7 +373,7 @@ export const ContactUs = (): JSX.Element => {
                 <span className="text-blue-600">Social Media</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Follow us for the latest updates, tips, and insights. Join thousands of professionals in our growing community.
+                Follow us for the latest online presence tips, SEO insights, and digital marketing strategies. Join thousands of business owners in our growing community.
               </p>
             </div>
             
@@ -524,7 +399,7 @@ export const ContactUs = (): JSX.Element => {
                     <UsersIcon size={24} className="text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Community Forum</h3>
-                  <p className="text-gray-600 mb-4">Connect with other users, share tips, and get help from the community.</p>
+                  <p className="text-gray-600 mb-4">Connect with other business owners, share online presence tips, and get help from the community.</p>
                   <Button variant="outline" className="w-full">
                     Join Forum
                   </Button>
@@ -537,7 +412,7 @@ export const ContactUs = (): JSX.Element => {
                     <MessageSquareIcon size={24} className="text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Live Webinars</h3>
-                  <p className="text-gray-600 mb-4">Join our weekly webinars to learn best practices and new features.</p>
+                  <p className="text-gray-600 mb-4">Join our weekly webinars to learn SEO best practices and online marketing strategies.</p>
                   <Button variant="outline" className="w-full">
                     Register Now
                   </Button>
@@ -550,7 +425,7 @@ export const ContactUs = (): JSX.Element => {
                     <StarIcon size={24} className="text-purple-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Success Stories</h3>
-                  <p className="text-gray-600 mb-4">Read how other businesses are succeeding with QuickSpace.</p>
+                  <p className="text-gray-600 mb-4">Read how other businesses are boosting their online presence with StarBoost.</p>
                   <Button variant="outline" className="w-full">
                     Read Stories
                   </Button>
@@ -574,7 +449,7 @@ export const ContactUs = (): JSX.Element => {
                 <span className="text-blue-200">Started?</span>
               </h2>
               <p className="text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
-                Don't wait any longer. Join thousands of businesses that have already transformed their operations with QuickSpace.
+                Don't wait any longer. Join thousands of businesses that have already transformed their online presence with StarBoost.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -599,10 +474,10 @@ export const ContactUs = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
             <div className="lg:col-span-1 space-y-6">
               <div className="text-2xl font-bold">
-                <span className="text-blue-400">→</span>QuickSpace
+                <span className="text-blue-400">⭐</span>StarBoost
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Empowering businesses worldwide with innovative solutions.
+                Empowering businesses worldwide to dominate their online presence.
               </p>
             </div>
             
@@ -639,7 +514,7 @@ export const ContactUs = (): JSX.Element => {
           
           <div className="border-t border-gray-800 pt-8 text-center">
             <div className="text-gray-400">
-              © 2024 QuickSpace. All rights reserved.
+              © 2024 StarBoost. All rights reserved.
             </div>
           </div>
         </div>

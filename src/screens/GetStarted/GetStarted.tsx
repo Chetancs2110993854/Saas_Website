@@ -22,9 +22,10 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Navigation } from "../../components/Navigation";
+import { DemoBookingForm } from "../../components/forms/DemoBookingForm";
 
 export const GetStarted = (): JSX.Element => {
-  const [showCalendly, setShowCalendly] = useState(false);
+  const [showBookingForm, setShowBookingForm] = useState(false);
 
   const benefits = [
     {
@@ -259,113 +260,136 @@ export const GetStarted = (): JSX.Element => {
             <div className="space-y-6">
               <div className="text-center lg:text-left">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Select Your Preferred Time
+                  {showBookingForm ? "Fill Out Your Details" : "Select Your Preferred Time"}
                 </h3>
                 <p className="text-gray-600">
-                  Choose a time that works best for you. All times are shown in your local timezone.
+                  {showBookingForm 
+                    ? "Tell us about your business and we'll contact you to schedule your demo."
+                    : "Choose a time that works best for you. All times are shown in your local timezone."
+                  }
                 </p>
               </div>
               
               {/* Booking Card */}
               <Card className="border-0 shadow-xl bg-white rounded-2xl overflow-hidden">
                 <CardContent className="p-8">
-                  {/* Booking Illustration */}
-                  <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 mb-8">
-                    <div className="text-center">
-                      {/* Online Presence Illustration */}
-                      <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 relative">
-                        <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                          <SearchIcon size={24} className="text-white" />
-                        </div>
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                          <TrendingUpIcon size={12} className="text-white" />
+                  {showBookingForm ? (
+                    <DemoBookingForm onSuccess={() => setShowBookingForm(false)} />
+                  ) : (
+                    <>
+                      {/* Booking Illustration */}
+                      <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 mb-8">
+                        <div className="text-center">
+                          {/* Online Presence Illustration */}
+                          <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 relative">
+                            <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                              <SearchIcon size={24} className="text-white" />
+                            </div>
+                            <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                              <TrendingUpIcon size={12} className="text-white" />
+                            </div>
+                          </div>
+                          
+                          <h4 className="text-xl font-bold text-gray-900 mb-3">
+                            Ready to Boost Your Online Presence?
+                          </h4>
+                          <p className="text-gray-600 mb-6">
+                            Choose your preferred booking method below to get started with your personalized strategy session.
+                          </p>
+                          
+                          {/* Booking Options */}
+                          <div className="space-y-4">
+                            <Button 
+                              onClick={handleBookingClick}
+                              className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3"
+                            >
+                              <CalendarIcon size={20} />
+                              Book via Calendly
+                              <ExternalLinkIcon size={16} />
+                            </Button>
+                            
+                            <div className="text-gray-500 text-sm">or</div>
+                            
+                            <Button 
+                              onClick={() => setShowBookingForm(true)}
+                              variant="outline"
+                              className="w-full border-2 border-blue-300 text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center gap-3"
+                            >
+                              <UserIcon size={20} />
+                              Fill Out Form
+                            </Button>
+                          </div>
+                          
+                          <p className="text-gray-500 text-sm mt-4">
+                            Completely free • No commitment • Expert guidance
+                          </p>
                         </div>
                       </div>
                       
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        Ready to Boost Your Online Presence?
-                      </h4>
-                      <p className="text-gray-600 mb-6">
-                        Click below to open our booking calendar and select your preferred time slot for a personalized strategy session.
-                      </p>
-                      
-                      {/* Booking Button */}
-                      <Button 
-                        onClick={handleBookingClick}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3 mx-auto"
-                      >
-                        <CalendarIcon size={20} />
-                        Book Your Strategy Session
-                        <ExternalLinkIcon size={16} />
-                      </Button>
-                      
-                      <p className="text-gray-500 text-sm mt-4">
-                        Opens in a new window • Completely free • No commitment
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Alternative Booking Methods */}
-                  <div className="space-y-4">
-                    <div className="text-center">
-                      <h5 className="font-bold text-gray-900 mb-4">Alternative Contact Methods</h5>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <Button 
-                        variant="outline" 
-                        className="flex items-center gap-2 p-4 h-auto"
-                        onClick={() => window.open('tel:+1234567890')}
-                      >
-                        <PhoneIcon size={20} className="text-green-600" />
-                        <div className="text-left">
-                          <div className="font-medium">Call Direct</div>
-                          <div className="text-sm text-gray-600">+1 (234) 567-890</div>
+                      {/* Alternative Booking Methods */}
+                      <div className="space-y-4">
+                        <div className="text-center">
+                          <h5 className="font-bold text-gray-900 mb-4">Alternative Contact Methods</h5>
                         </div>
-                      </Button>
-                      
-                      <Button 
-                        variant="outline" 
-                        className="flex items-center gap-2 p-4 h-auto"
-                        onClick={() => window.open('mailto:demo@starboost.com')}
-                      >
-                        <MessageSquareIcon size={20} className="text-blue-600" />
-                        <div className="text-left">
-                          <div className="font-medium">Email Us</div>
-                          <div className="text-sm text-gray-600">demo@starboost.com</div>
+                        
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <Button 
+                            variant="outline" 
+                            className="flex items-center gap-2 p-4 h-auto"
+                            onClick={() => window.open('tel:+1234567890')}
+                          >
+                            <PhoneIcon size={20} className="text-green-600" />
+                            <div className="text-left">
+                              <div className="font-medium">Call Direct</div>
+                              <div className="text-sm text-gray-600">+1 (234) 567-890</div>
+                            </div>
+                          </Button>
+                          
+                          <Button 
+                            variant="outline" 
+                            className="flex items-center gap-2 p-4 h-auto"
+                            onClick={() => window.open('mailto:demo@starboost.com')}
+                          >
+                            <MessageSquareIcon size={20} className="text-blue-600" />
+                            <div className="text-left">
+                              <div className="font-medium">Email Us</div>
+                              <div className="text-sm text-gray-600">demo@starboost.com</div>
+                            </div>
+                          </Button>
                         </div>
-                      </Button>
-                    </div>
-                  </div>
+                      </div>
+                    </>
+                  )}
                 </CardContent>
               </Card>
               
-              {/* Trust Indicators */}
-              <Card className="border-0 shadow-lg bg-gray-50 rounded-2xl">
-                <CardContent className="p-6">
-                  <div className="text-center">
-                    <h4 className="font-bold text-gray-900 mb-4">Why Choose Our Strategy Session?</h4>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <CheckIcon size={16} className="text-green-500" />
-                        <span className="text-gray-700">No sales pressure</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckIcon size={16} className="text-green-500" />
-                        <span className="text-gray-700">Expert guidance</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckIcon size={16} className="text-green-500" />
-                        <span className="text-gray-700">Instant trial access</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <CheckIcon size={16} className="text-green-500" />
-                        <span className="text-gray-700">Custom strategy</span>
+              {!showBookingForm && (
+                <Card className="border-0 shadow-lg bg-gray-50 rounded-2xl">
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <h4 className="font-bold text-gray-900 mb-4">Why Choose Our Strategy Session?</h4>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="flex items-center gap-2">
+                          <CheckIcon size={16} className="text-green-500" />
+                          <span className="text-gray-700">No sales pressure</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckIcon size={16} className="text-green-500" />
+                          <span className="text-gray-700">Expert guidance</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckIcon size={16} className="text-green-500" />
+                          <span className="text-gray-700">Instant trial access</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckIcon size={16} className="text-green-500" />
+                          <span className="text-gray-700">Custom strategy</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           </div>
         </section>
