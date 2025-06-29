@@ -10,7 +10,7 @@ export const Navigation = () => {
       <nav className="flex items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-bold text-gray-900">
-            <span className="text-blue-600">→</span>QuickSpace
+            <span className="text-blue-600">⭐</span>StarBoost
           </Link>
           <div className="hidden lg:flex ml-12 space-x-8">
             <Link 

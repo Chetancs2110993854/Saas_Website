@@ -18,6 +18,12 @@ import {
   CalendarIcon,
   SparklesIcon,
   RocketIcon,
+  SearchIcon,
+  MonitorIcon,
+  SmartphoneIcon,
+  GlobeIcon,
+  EyeIcon,
+  MousePointerIcon,
 } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -31,44 +37,44 @@ import { Navigation } from "../../components/Navigation";
 export const ElementHome = (): JSX.Element => {
   const features = [
     {
-      title: "Advanced Analytics",
+      title: "SEO Optimization",
       description:
-        "Get deep insights into your business performance with our comprehensive analytics dashboard and real-time reporting.",
-      icon: <BarChart3Icon size={32} className="text-blue-600" />,
+        "Boost your search rankings with our advanced SEO tools and analytics. Get found by more customers online.",
+      icon: <SearchIcon size={32} className="text-blue-600" />,
       color: "from-blue-50 to-blue-100",
     },
     {
-      title: "24/7 Support",
+      title: "Social Media Management",
       description:
-        "Our dedicated support team is available around the clock to help you succeed and resolve any issues quickly.",
-      icon: <HeadphonesIcon size={32} className="text-green-600" />,
+        "Manage all your social platforms from one dashboard. Schedule posts, track engagement, and grow your following.",
+      icon: <UsersIcon size={32} className="text-green-600" />,
       color: "from-green-50 to-green-100",
     },
     {
-      title: "Enterprise Security",
+      title: "Website Analytics",
       description:
-        "Bank-level security with end-to-end encryption, compliance certifications, and advanced threat protection.",
-      icon: <ShieldCheckIcon size={32} className="text-purple-600" />,
+        "Get deep insights into your website performance with comprehensive analytics and real-time reporting.",
+      icon: <BarChart3Icon size={32} className="text-purple-600" />,
       color: "from-purple-50 to-purple-100",
     },
     {
-      title: "Lightning Fast",
+      title: "Online Reputation",
       description:
-        "Optimized performance with global CDN, ensuring your applications load instantly anywhere in the world.",
-      icon: <ZapIcon size={32} className="text-yellow-600" />,
+        "Monitor and manage your online reputation across all platforms. Respond to reviews and build trust.",
+      icon: <ShieldCheckIcon size={32} className="text-yellow-600" />,
       color: "from-yellow-50 to-yellow-100",
     },
     {
-      title: "Team Collaboration",
+      title: "Content Creation",
       description:
-        "Seamless collaboration tools that keep your team synchronized and productive across all projects.",
-      icon: <UsersIcon size={32} className="text-indigo-600" />,
+        "Create engaging content that converts. AI-powered tools help you craft compelling copy and visuals.",
+      icon: <ZapIcon size={32} className="text-indigo-600" />,
       color: "from-indigo-50 to-indigo-100",
     },
     {
-      title: "Growth Tracking",
+      title: "Performance Tracking",
       description:
-        "Monitor your business growth with advanced metrics, forecasting, and performance optimization tools.",
+        "Track your online presence growth with advanced metrics, goal setting, and automated reporting.",
       icon: <TrendingUpIcon size={32} className="text-red-600" />,
       color: "from-red-50 to-red-100",
     },
@@ -77,7 +83,7 @@ export const ElementHome = (): JSX.Element => {
   const testimonials = [
     {
       quote:
-        "QuickSpace transformed our business operations completely. The analytics dashboard gives us insights we never had before, and the support team is absolutely phenomenal.",
+        "StarBoost transformed our online presence completely. Our website traffic increased by 300% and our social media engagement is through the roof!",
       author: "Sarah Johnson",
       role: "CEO, TechFlow",
       avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
@@ -86,18 +92,18 @@ export const ElementHome = (): JSX.Element => {
     },
     {
       quote:
-        "The best investment we've made for our company. QuickSpace's automation features saved us 40+ hours per week, and the ROI has been incredible.",
+        "The best investment we've made for our digital marketing. StarBoost's tools helped us reach customers we never knew existed.",
       author: "Michael Chen",
-      role: "Operations Director",
+      role: "Marketing Director",
       avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
       rating: 5,
       company: "InnovateCorp",
     },
     {
       quote:
-        "Outstanding platform with exceptional customer service. The team collaboration features have revolutionized how we work together remotely.",
+        "Outstanding platform with incredible results. Our online reputation improved dramatically and customer trust has never been higher.",
       author: "Emily Rodriguez",
-      role: "Product Manager",
+      role: "Brand Manager",
       avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop",
       rating: 5,
       company: "DesignStudio",
@@ -109,50 +115,50 @@ export const ElementHome = (): JSX.Element => {
       name: "Starter",
       price: "$29",
       period: "per month",
-      description: "Perfect for small teams and startups",
+      description: "Perfect for small businesses starting their online journey",
       features: [
-        "Up to 5 team members",
-        "Basic analytics dashboard",
+        "Basic SEO optimization",
+        "Social media scheduling",
+        "Website analytics",
         "Email support",
-        "5GB storage",
-        "Basic integrations",
+        "5 social accounts",
       ],
       buttonText: "Book a Demo",
       popular: false,
-      badge: "Most Popular for Startups",
+      badge: "Great for Startups",
     },
     {
       name: "Professional",
       price: "$99",
       period: "per month",
-      description: "Ideal for growing businesses",
+      description: "Ideal for growing businesses serious about online presence",
       features: [
-        "Up to 25 team members",
-        "Advanced analytics & reporting",
+        "Advanced SEO tools",
+        "Multi-platform management",
+        "Detailed analytics & reporting",
         "Priority support",
-        "100GB storage",
-        "All integrations included",
-        "Custom workflows",
-        "API access",
+        "Unlimited social accounts",
+        "Content creation tools",
+        "Reputation monitoring",
       ],
-      buttonText: "Get Started",
+      buttonText: "Book a Demo",
       popular: true,
-      badge: "Best Value",
+      badge: "Most Popular",
     },
     {
       name: "Enterprise",
       price: "Custom",
       period: "pricing",
-      description: "For large organizations with specific needs",
+      description: "For large organizations with complex online presence needs",
       features: [
-        "Unlimited team members",
-        "Enterprise analytics suite",
-        "24/7 dedicated support",
-        "Unlimited storage",
+        "Custom SEO strategies",
+        "Dedicated account manager",
+        "Advanced analytics suite",
+        "24/7 priority support",
+        "White-label solutions",
+        "API access",
         "Custom integrations",
-        "Advanced security features",
-        "On-premise deployment",
-        "SLA guarantee",
+        "Training & onboarding",
       ],
       buttonText: "Contact Sales",
       popular: false,
@@ -161,26 +167,26 @@ export const ElementHome = (): JSX.Element => {
   ];
 
   const stats = [
-    { value: "50K+", label: "Active Users", icon: <UsersIcon size={24} className="text-blue-600" /> },
-    { value: "99.9%", label: "Uptime", icon: <ShieldCheckIcon size={24} className="text-green-600" /> },
-    { value: "150+", label: "Countries", icon: <TrendingUpIcon size={24} className="text-purple-600" /> },
-    { value: "24/7", label: "Support", icon: <HeadphonesIcon size={24} className="text-orange-600" /> },
+    { value: "50K+", label: "Businesses Boosted", icon: <UsersIcon size={24} className="text-blue-600" /> },
+    { value: "300%", label: "Avg. Traffic Increase", icon: <TrendingUpIcon size={24} className="text-green-600" /> },
+    { value: "150+", label: "Countries Served", icon: <GlobeIcon size={24} className="text-purple-600" /> },
+    { value: "24/7", label: "Expert Support", icon: <HeadphonesIcon size={24} className="text-orange-600" /> },
   ];
 
   const brands = [
-    { name: "Microsoft", logo: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
-    { name: "Google", logo: "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
-    { name: "Amazon", logo: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
-    { name: "Spotify", logo: "https://images.pexels.com/photos/164745/pexels-photo-164745.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
-    { name: "Airbnb", logo: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
-    { name: "Uber", logo: "https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
+    { name: "TechFlow", logo: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
+    { name: "InnovateCorp", logo: "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
+    { name: "DesignStudio", logo: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
+    { name: "GrowthCo", logo: "https://images.pexels.com/photos/164745/pexels-photo-164745.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
+    { name: "BrandMax", logo: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
+    { name: "DigitalPro", logo: "https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg?auto=compress&cs=tinysrgb&w=120&h=60&fit=crop" },
   ];
 
   const footerLinks = {
-    product: ["Features", "Integrations", "Pricing", "API", "Documentation"],
+    product: ["Features", "SEO Tools", "Pricing", "API", "Documentation"],
     company: ["About Us", "Blog", "Careers", "Press Kit", "Contact"],
-    resources: ["Help Center", "Community", "Webinars", "Status Page", "Terms of Service"],
-    solutions: ["For Startups", "For Enterprise", "For Agencies", "For E-commerce", "For SaaS"],
+    resources: ["Help Center", "Community", "Webinars", "Case Studies", "Terms of Service"],
+    solutions: ["For Startups", "For Enterprise", "For Agencies", "For E-commerce", "For Local Business"],
   };
 
   return (
@@ -195,18 +201,18 @@ export const ElementHome = (): JSX.Element => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <Badge className="bg-blue-50 text-blue-700 border-blue-200 px-4 py-2 rounded-full font-medium">
-                  🚀 New: Advanced Analytics Dashboard
+                  🚀 New: AI-Powered SEO Tools
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-gray-900">
-                  Build Your Business{" "}
+                  Boost Your{" "}
                   <span className="text-blue-600 relative">
-                    Faster
+                    Online Presence
                     <div className="absolute -bottom-2 left-0 w-full h-3 bg-blue-200 opacity-30 rounded-full"></div>
                   </span>{" "}
-                  Than Ever
+                  Like Never Before
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-lg">
-                  Transform your business with our comprehensive platform that combines powerful analytics, seamless collaboration, and enterprise-grade security.
+                  Transform your digital footprint with our comprehensive suite of tools. From SEO optimization to social media management, we help businesses shine online.
                 </p>
               </div>
               
@@ -252,7 +258,7 @@ export const ElementHome = (): JSX.Element => {
                       <StarIcon key={i} size={16} fill="currentColor" />
                     ))}
                   </div>
-                  <span className="text-gray-600 font-medium">Trusted by 50,000+ users</span>
+                  <span className="text-gray-600 font-medium">Trusted by 50,000+ businesses</span>
                 </div>
               </div>
             </div>
@@ -268,15 +274,15 @@ export const ElementHome = (): JSX.Element => {
                   <div className="absolute bottom-32 right-8 w-8 h-8 bg-blue-300 rounded-full opacity-40"></div>
                 </div>
 
-                {/* Main Dashboard Illustration */}
+                {/* Main Online Presence Dashboard Illustration */}
                 <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-6 lg:p-8 border border-gray-100">
                   {/* Dashboard Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <BarChart3Icon size={16} className="text-white" />
+                        <TrendingUpIcon size={16} className="text-white" />
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900">Analytics Dashboard</h3>
+                      <h3 className="text-lg font-bold text-gray-900">Online Presence Dashboard</h3>
                     </div>
                     <div className="flex gap-2">
                       <div className="w-3 h-3 bg-red-400 rounded-full"></div>
@@ -285,65 +291,85 @@ export const ElementHome = (): JSX.Element => {
                     </div>
                   </div>
 
-                  {/* Chart Area */}
-                  <div className="h-48 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl relative overflow-hidden mb-6">
-                    {/* Animated Chart Bars */}
+                  {/* Online Presence Metrics */}
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl text-center">
+                      <SearchIcon size={20} className="text-blue-600 mx-auto mb-2" />
+                      <div className="text-xs text-gray-600 mb-1">SEO Score</div>
+                      <div className="text-lg font-bold text-gray-900">94/100</div>
+                      <div className="text-xs text-green-600 flex items-center justify-center gap-1">
+                        <TrendingUpIcon size={10} />
+                        +12%
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl text-center">
+                      <UsersIcon size={20} className="text-green-600 mx-auto mb-2" />
+                      <div className="text-xs text-gray-600 mb-1">Social Reach</div>
+                      <div className="text-lg font-bold text-gray-900">48.5K</div>
+                      <div className="text-xs text-green-600 flex items-center justify-center gap-1">
+                        <TrendingUpIcon size={10} />
+                        +24%
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl text-center">
+                      <EyeIcon size={20} className="text-purple-600 mx-auto mb-2" />
+                      <div className="text-xs text-gray-600 mb-1">Visibility</div>
+                      <div className="text-lg font-bold text-gray-900">87%</div>
+                      <div className="text-xs text-purple-600 flex items-center justify-center gap-1">
+                        <TrendingUpIcon size={10} />
+                        +18%
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Growth Chart Area */}
+                  <div className="h-32 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl relative overflow-hidden mb-4">
+                    {/* Animated Growth Bars */}
                     <div className="absolute inset-0 flex items-end justify-center p-4 space-x-2">
-                      {[65, 45, 80, 35, 70, 90, 55, 75, 60, 85, 40, 95].map((height, i) => (
+                      {[45, 65, 80, 55, 90, 75, 95, 85, 70, 88, 92, 98].map((height, i) => (
                         <div
                           key={i}
                           className="bg-gradient-to-t from-blue-500 to-blue-400 rounded-t-sm opacity-80 hover:opacity-100 transition-all duration-300 animate-pulse"
                           style={{ 
                             height: `${height}%`, 
-                            width: '12px',
+                            width: '8px',
                             animationDelay: `${i * 0.1}s`
                           }}
                         ></div>
                       ))}
                     </div>
                     
-                    {/* Chart Grid Lines */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-4">
-                      {[...Array(5)].map((_, i) => (
-                        <div key={i} className="w-full h-px bg-white opacity-20"></div>
-                      ))}
-                    </div>
-
-                    {/* Revenue Growth Indicator */}
-                    <div className="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
-                      <div className="text-xs text-gray-600 mb-1">Revenue Growth</div>
-                      <div className="text-xl font-bold text-gray-900 flex items-center gap-1">
-                        +24.5%
-                        <TrendingUpIcon size={16} className="text-green-500" />
+                    {/* Growth Trend Line */}
+                    <div className="absolute top-4 left-4 bg-white rounded-lg p-2 shadow-lg">
+                      <div className="text-xs text-gray-600 mb-1">Growth Trend</div>
+                      <div className="text-lg font-bold text-gray-900 flex items-center gap-1">
+                        +127%
+                        <TrendingUpIcon size={14} className="text-green-500" />
                       </div>
                     </div>
                   </div>
 
-                  {/* Dashboard Metrics */}
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl text-center">
-                      <div className="text-xs text-gray-600 mb-1">Conversion</div>
-                      <div className="text-lg font-bold text-gray-900">3.2%</div>
-                      <div className="text-xs text-green-600 flex items-center justify-center gap-1">
-                        <TrendingUpIcon size={10} />
-                        +0.5%
-                      </div>
+                  {/* Platform Status */}
+                  <div className="grid grid-cols-4 gap-2">
+                    <div className="bg-blue-50 p-2 rounded-lg text-center">
+                      <MonitorIcon size={16} className="text-blue-600 mx-auto mb-1" />
+                      <div className="text-xs text-gray-600">Website</div>
+                      <div className="text-xs font-bold text-green-600">Active</div>
                     </div>
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl text-center">
-                      <div className="text-xs text-gray-600 mb-1">Revenue</div>
-                      <div className="text-lg font-bold text-gray-900">$48.5K</div>
-                      <div className="text-xs text-blue-600 flex items-center justify-center gap-1">
-                        <TrendingUpIcon size={10} />
-                        +12%
-                      </div>
+                    <div className="bg-green-50 p-2 rounded-lg text-center">
+                      <UsersIcon size={16} className="text-green-600 mx-auto mb-1" />
+                      <div className="text-xs text-gray-600">Social</div>
+                      <div className="text-xs font-bold text-green-600">Growing</div>
                     </div>
-                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl text-center">
-                      <div className="text-xs text-gray-600 mb-1">Users</div>
-                      <div className="text-lg font-bold text-gray-900">12.4K</div>
-                      <div className="text-xs text-purple-600 flex items-center justify-center gap-1">
-                        <UsersIcon size={10} />
-                        +8%
-                      </div>
+                    <div className="bg-purple-50 p-2 rounded-lg text-center">
+                      <SearchIcon size={16} className="text-purple-600 mx-auto mb-1" />
+                      <div className="text-xs text-gray-600">SEO</div>
+                      <div className="text-xs font-bold text-green-600">Optimized</div>
+                    </div>
+                    <div className="bg-orange-50 p-2 rounded-lg text-center">
+                      <StarIcon size={16} className="text-orange-600 mx-auto mb-1" />
+                      <div className="text-xs text-gray-600">Reviews</div>
+                      <div className="text-xs font-bold text-green-600">4.9★</div>
                     </div>
                   </div>
                 </div>
@@ -352,19 +378,19 @@ export const ElementHome = (): JSX.Element => {
                 <div className="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-2xl border border-gray-100 backdrop-blur-sm">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <div className="text-xs text-gray-600 font-medium">Live</div>
+                    <div className="text-xs text-gray-600 font-medium">Live Traffic</div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">+127%</div>
-                  <div className="text-xs text-green-600 font-medium">Growth</div>
+                  <div className="text-2xl font-bold text-gray-900">+347%</div>
+                  <div className="text-xs text-green-600 font-medium">This Month</div>
                 </div>
                 
                 <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-2xl border border-gray-100 backdrop-blur-sm">
                   <div className="flex items-center gap-2 mb-2">
-                    <UsersIcon size={12} className="text-blue-600" />
-                    <div className="text-xs text-gray-600 font-medium">Active</div>
+                    <StarIcon size={12} className="text-yellow-500" />
+                    <div className="text-xs text-gray-600 font-medium">Rating</div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">12.4K</div>
-                  <div className="text-xs text-blue-600 font-medium">Online</div>
+                  <div className="text-2xl font-bold text-gray-900">4.9/5</div>
+                  <div className="text-xs text-blue-600 font-medium">Online Rep</div>
                 </div>
 
                 {/* Decorative Elements */}
@@ -380,7 +406,7 @@ export const ElementHome = (): JSX.Element => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <p className="text-gray-500 font-medium mb-8">
-                Trusted by industry leaders worldwide
+                Trusted by businesses worldwide to boost their online presence
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
                 {brands.map((brand, index) => (
@@ -418,10 +444,10 @@ export const ElementHome = (): JSX.Element => {
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-gray-900">
               Everything You Need to{" "}
-              <span className="text-blue-600">Succeed</span>
+              <span className="text-blue-600">Dominate Online</span>
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our comprehensive platform provides all the tools and features you need to build, grow, and scale your business effectively.
+              Our comprehensive platform provides all the tools you need to build, grow, and maintain a powerful online presence that drives real results.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -452,19 +478,19 @@ export const ElementHome = (): JSX.Element => {
                   📊 Analytics
                 </Badge>
                 <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                  Make Data-Driven{" "}
-                  <span className="text-blue-600">Decisions</span>
+                  Track Your{" "}
+                  <span className="text-blue-600">Online Growth</span>
                 </h2>
                 <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-                  Get comprehensive insights into your business performance with our advanced analytics dashboard. Track key metrics, identify trends, and make informed decisions.
+                  Get comprehensive insights into your online presence performance. Monitor SEO rankings, social media engagement, website traffic, and reputation metrics all in one place.
                 </p>
               </div>
               
               <div className="space-y-6">
                 {[
-                  { label: "Real-time Data Processing", value: "99.9% Accuracy" },
-                  { label: "Custom Report Generation", value: "50+ Templates" },
-                  { label: "API Integration", value: "200+ Connectors" },
+                  { label: "Real-time SEO Tracking", value: "99.9% Accuracy" },
+                  { label: "Social Media Analytics", value: "50+ Platforms" },
+                  { label: "Reputation Monitoring", value: "24/7 Alerts" },
                 ].map((item, index) => (
                   <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                     <span className="text-gray-700 font-medium">{item.label}</span>
@@ -484,7 +510,7 @@ export const ElementHome = (): JSX.Element => {
               <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8">
                 <div className="bg-white rounded-2xl shadow-2xl p-6 lg:p-8">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-bold text-gray-900">Performance Overview</h3>
+                    <h3 className="text-lg font-bold text-gray-900">Online Presence Overview</h3>
                     <Badge className="bg-green-50 text-green-700 border-green-200">Live</Badge>
                   </div>
                   
@@ -500,26 +526,26 @@ export const ElementHome = (): JSX.Element => {
                       ))}
                     </div>
                     <div className="absolute top-4 left-4">
-                      <div className="text-sm text-gray-600">Revenue Growth</div>
-                      <div className="text-2xl font-bold text-gray-900">+24.5%</div>
+                      <div className="text-sm text-gray-600">Online Visibility</div>
+                      <div className="text-2xl font-bold text-gray-900">+347%</div>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-3 gap-4">
                     <div className="bg-gray-50 p-4 rounded-xl text-center">
-                      <div className="text-sm text-gray-600 mb-1">Conversion</div>
-                      <div className="text-xl font-bold text-gray-900">3.2%</div>
-                      <div className="text-xs text-green-600">+0.5%</div>
-                    </div>
-                    <div className="bg-gray-50 p-4 rounded-xl text-center">
-                      <div className="text-sm text-gray-600 mb-1">Revenue</div>
-                      <div className="text-xl font-bold text-gray-900">$48.5K</div>
+                      <div className="text-sm text-gray-600 mb-1">SEO Score</div>
+                      <div className="text-xl font-bold text-gray-900">94/100</div>
                       <div className="text-xs text-green-600">+12%</div>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-xl text-center">
-                      <div className="text-sm text-gray-600 mb-1">Users</div>
-                      <div className="text-xl font-bold text-gray-900">12.4K</div>
-                      <div className="text-xs text-blue-600">+8%</div>
+                      <div className="text-sm text-gray-600 mb-1">Social Reach</div>
+                      <div className="text-xl font-bold text-gray-900">48.5K</div>
+                      <div className="text-xs text-green-600">+24%</div>
+                    </div>
+                    <div className="bg-gray-50 p-4 rounded-xl text-center">
+                      <div className="text-sm text-gray-600 mb-1">Reputation</div>
+                      <div className="text-xl font-bold text-gray-900">4.9★</div>
+                      <div className="text-xs text-blue-600">+0.3</div>
                     </div>
                   </div>
                 </div>
@@ -533,14 +559,14 @@ export const ElementHome = (): JSX.Element => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 lg:mb-20">
               <Badge className="bg-green-50 text-green-700 border-green-200 px-4 py-2 rounded-full font-medium mb-6">
-                💬 Testimonials
+                💬 Success Stories
               </Badge>
               <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-gray-900">
                 Loved by Thousands of{" "}
-                <span className="text-blue-600">Customers</span>
+                <span className="text-blue-600">Businesses</span>
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Don't just take our word for it. Here's what our customers have to say about their experience with QuickSpace.
+                Don't just take our word for it. Here's what our customers have to say about their online presence transformation with StarBoost.
               </p>
             </div>
             
@@ -589,10 +615,10 @@ export const ElementHome = (): JSX.Element => {
             </Badge>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-gray-900">
               Choose Your Perfect{" "}
-              <span className="text-blue-600">Plan</span>
+              <span className="text-blue-600">Growth Plan</span>
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Flexible pricing options designed to grow with your business. Start free and upgrade as you scale.
+              Transparent pricing with no hidden fees. Start free and scale as your online presence grows. All plans include our core features with varying limits and advanced capabilities.
             </p>
             <div className="inline-block">
               <Tabs defaultValue="monthly" className="w-[320px]">
@@ -681,10 +707,10 @@ export const ElementHome = (): JSX.Element => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
                   Stay Updated with{" "}
-                  <span className="text-blue-200">QuickSpace</span>
+                  <span className="text-blue-200">StarBoost</span>
                 </h2>
                 <p className="text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-                  Get the latest updates, feature announcements, and exclusive insights delivered straight to your inbox. Join thousands of professionals who trust QuickSpace.
+                  Get the latest online presence tips, SEO insights, and digital marketing strategies delivered straight to your inbox. Join thousands of business owners who trust StarBoost.
                 </p>
               </div>
               
@@ -708,15 +734,15 @@ export const ElementHome = (): JSX.Element => {
                 <div className="flex items-center gap-8 text-blue-200">
                   <div className="flex items-center gap-2">
                     <CheckIcon size={16} />
-                    <span className="text-sm">Weekly insights</span>
+                    <span className="text-sm">SEO tips</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckIcon size={16} />
-                    <span className="text-sm">Product updates</span>
+                    <span className="text-sm">Growth strategies</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckIcon size={16} />
-                    <span className="text-sm">Exclusive content</span>
+                    <span className="text-sm">Exclusive insights</span>
                   </div>
                 </div>
               </div>
@@ -731,14 +757,14 @@ export const ElementHome = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 mb-12">
             <div className="lg:col-span-2 space-y-6">
               <div className="text-2xl font-bold">
-                <span className="text-blue-400">→</span>QuickSpace
+                <span className="text-blue-400">⭐</span>StarBoost
               </div>
               <p className="text-gray-400 leading-relaxed max-w-md">
-                Empowering businesses worldwide with innovative solutions that drive growth, efficiency, and success in the digital age.
+                Empowering businesses worldwide to dominate their online presence with innovative digital marketing solutions and expert guidance.
               </p>
               <div className="text-gray-400 space-y-2">
                 <p className="flex items-center gap-2">
-                  <span>📧</span> hello@quickspace.com
+                  <span>📧</span> hello@starboost.com
                 </p>
                 <p className="flex items-center gap-2">
                   <span>📞</span> +1 (555) 123-4567
@@ -814,7 +840,7 @@ export const ElementHome = (): JSX.Element => {
           
           <div className="border-t border-gray-800 pt-8 flex flex-col lg:flex-row justify-between items-center gap-4">
             <div className="text-gray-400">
-              © 2024 QuickSpace. All rights reserved.
+              © 2024 StarBoost. All rights reserved.
             </div>
             <div className="flex gap-6 text-gray-400">
               <a href="#" className="hover:text-white transition-colors duration-200">

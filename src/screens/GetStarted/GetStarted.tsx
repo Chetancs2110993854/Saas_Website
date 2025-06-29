@@ -14,6 +14,8 @@ import {
   HeadphonesIcon,
   UsersIcon,
   ExternalLinkIcon,
+  SearchIcon,
+  BarChart3Icon,
 } from "lucide-react";
 import React, { useState } from "react";
 import { Badge } from "../../components/ui/badge";
@@ -27,25 +29,25 @@ export const GetStarted = (): JSX.Element => {
   const benefits = [
     {
       title: "Free 14-Day Trial",
-      description: "Full access to all features with no credit card required",
+      description: "Full access to all online presence tools with no credit card required",
       icon: <ZapIcon size={24} className="text-blue-600" />,
       color: "from-blue-50 to-blue-100"
     },
     {
       title: "Personal Onboarding",
-      description: "One-on-one setup session with our expert team",
+      description: "One-on-one setup session with our digital marketing experts",
       icon: <UserIcon size={24} className="text-green-600" />,
       color: "from-green-50 to-green-100"
     },
     {
-      title: "Custom Demo",
-      description: "See how QuickSpace works specifically for your business",
+      title: "Custom Strategy",
+      description: "See how StarBoost can specifically boost your online presence",
       icon: <VideoIcon size={24} className="text-purple-600" />,
       color: "from-purple-50 to-purple-100"
     },
     {
       title: "Instant Support",
-      description: "Get immediate answers to all your questions",
+      description: "Get immediate answers about SEO, social media, and online reputation",
       icon: <HeadphonesIcon size={24} className="text-orange-600" />,
       color: "from-orange-50 to-orange-100"
     }
@@ -53,23 +55,23 @@ export const GetStarted = (): JSX.Element => {
 
   const meetingTypes = [
     {
-      title: "Quick Demo",
+      title: "Quick Overview",
       duration: "15 minutes",
-      description: "Perfect for a quick overview of QuickSpace features",
+      description: "Perfect for a quick overview of StarBoost's online presence tools",
       icon: <ZapIcon size={20} className="text-blue-600" />,
       popular: false
     },
     {
-      title: "Full Consultation",
+      title: "Full Strategy Session",
       duration: "30 minutes",
-      description: "Comprehensive walkthrough tailored to your business needs",
+      description: "Comprehensive walkthrough tailored to your online presence goals",
       icon: <UserIcon size={20} className="text-green-600" />,
       popular: true
     },
     {
       title: "Technical Deep Dive",
       duration: "45 minutes",
-      description: "Detailed technical discussion for IT teams and developers",
+      description: "Detailed discussion about SEO, analytics, and integration options",
       icon: <ShieldCheckIcon size={20} className="text-purple-600" />,
       popular: false
     }
@@ -77,21 +79,21 @@ export const GetStarted = (): JSX.Element => {
 
   const testimonials = [
     {
-      quote: "The onboarding call was incredibly helpful. They set up everything perfectly for our team.",
+      quote: "The onboarding call was incredibly helpful. They set up our entire online presence strategy perfectly.",
       author: "Sarah Johnson",
       role: "CEO, TechFlow",
       avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop"
     },
     {
-      quote: "Best demo I've ever had. They understood our needs immediately and showed exactly what we needed.",
+      quote: "Best demo I've ever had. They understood our online marketing needs immediately and showed exactly what we needed.",
       author: "Michael Chen",
-      role: "Operations Director",
+      role: "Marketing Director",
       avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop"
     },
     {
-      quote: "The personal touch made all the difference. We were up and running in no time.",
+      quote: "The personal touch made all the difference. Our online presence improved dramatically in just weeks.",
       author: "Emily Rodriguez",
-      role: "Product Manager",
+      role: "Brand Manager",
       avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop"
     }
   ];
@@ -100,7 +102,7 @@ export const GetStarted = (): JSX.Element => {
     { value: "5 min", label: "Average Setup Time", icon: <ClockIcon size={20} className="text-blue-600" /> },
     { value: "98%", label: "Customer Satisfaction", icon: <StarIcon size={20} className="text-yellow-600" /> },
     { value: "24/7", label: "Support Available", icon: <HeadphonesIcon size={20} className="text-green-600" /> },
-    { value: "50K+", label: "Happy Customers", icon: <UsersIcon size={20} className="text-purple-600" /> }
+    { value: "50K+", label: "Businesses Boosted", icon: <UsersIcon size={20} className="text-purple-600" /> }
   ];
 
   const handleBookingClick = () => {
@@ -118,18 +120,18 @@ export const GetStarted = (): JSX.Element => {
         <section className="container mx-auto px-4 py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
             <Badge className="bg-blue-50 text-blue-700 border-blue-200 px-4 py-2 rounded-full font-medium mb-6">
-              🚀 Get Started Today
+              🚀 Boost Your Online Presence
             </Badge>
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-gray-900 mb-6">
               Start Your{" "}
               <span className="text-blue-600 relative">
-                Free Trial
+                Digital Transformation
                 <div className="absolute -bottom-2 left-0 w-full h-3 bg-blue-200 opacity-30 rounded-full"></div>
               </span>{" "}
-              in Minutes
+              Today
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Book a personalized demo with our team and see how QuickSpace can transform your business. No commitment required – just 30 minutes to discover your potential.
+              Book a personalized demo with our online presence experts and discover how StarBoost can transform your digital footprint. No commitment required – just 30 minutes to unlock your potential.
             </p>
             
             {/* Quick Stats */}
@@ -155,10 +157,10 @@ export const GetStarted = (): JSX.Element => {
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
                 What You'll Get in Your{" "}
-                <span className="text-blue-600">Demo Call</span>
+                <span className="text-blue-600">Strategy Session</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Our team will work with you to understand your needs and show you exactly how QuickSpace can help.
+                Our team will work with you to understand your business and show you exactly how StarBoost can boost your online presence.
               </p>
             </div>
             
@@ -189,14 +191,14 @@ export const GetStarted = (): JSX.Element => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <Badge className="bg-purple-50 text-purple-700 border-purple-200 px-4 py-2 rounded-full font-medium">
-                  📅 Choose Your Meeting Type
+                  📅 Choose Your Session Type
                 </Badge>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                   Book Your{" "}
                   <span className="text-blue-600">Perfect Session</span>
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Select the meeting type that best fits your needs. All sessions are completely free and no-commitment.
+                  Select the session type that best fits your online presence needs. All sessions are completely free and no-commitment.
                 </p>
               </div>
               
@@ -238,9 +240,9 @@ export const GetStarted = (): JSX.Element => {
                   <h3 className="text-xl font-bold text-gray-900 mb-6">What to Expect</h3>
                   <div className="space-y-4">
                     {[
-                      "Personalized demo based on your business needs",
-                      "Q&A session with our product experts",
-                      "Custom setup recommendations",
+                      "Personalized online presence audit",
+                      "SEO and social media strategy discussion",
+                      "Custom growth recommendations",
                       "Free trial activation with full support"
                     ].map((item, index) => (
                       <div key={index} className="flex items-center gap-3">
@@ -270,16 +272,21 @@ export const GetStarted = (): JSX.Element => {
                   {/* Booking Illustration */}
                   <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 mb-8">
                     <div className="text-center">
-                      {/* Calendar Illustration */}
-                      <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6">
-                        <CalendarIcon size={40} className="text-blue-600" />
+                      {/* Online Presence Illustration */}
+                      <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6 relative">
+                        <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                          <SearchIcon size={24} className="text-white" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                          <TrendingUpIcon size={12} className="text-white" />
+                        </div>
                       </div>
                       
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        Ready to Book Your Demo?
+                        Ready to Boost Your Online Presence?
                       </h4>
                       <p className="text-gray-600 mb-6">
-                        Click below to open our booking calendar and select your preferred time slot.
+                        Click below to open our booking calendar and select your preferred time slot for a personalized strategy session.
                       </p>
                       
                       {/* Booking Button */}
@@ -288,7 +295,7 @@ export const GetStarted = (): JSX.Element => {
                         className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3 mx-auto"
                       >
                         <CalendarIcon size={20} />
-                        Book Your 30-Minute Demo
+                        Book Your Strategy Session
                         <ExternalLinkIcon size={16} />
                       </Button>
                       
@@ -301,7 +308,7 @@ export const GetStarted = (): JSX.Element => {
                   {/* Alternative Booking Methods */}
                   <div className="space-y-4">
                     <div className="text-center">
-                      <h5 className="font-bold text-gray-900 mb-4">Alternative Booking Methods</h5>
+                      <h5 className="font-bold text-gray-900 mb-4">Alternative Contact Methods</h5>
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -320,12 +327,12 @@ export const GetStarted = (): JSX.Element => {
                       <Button 
                         variant="outline" 
                         className="flex items-center gap-2 p-4 h-auto"
-                        onClick={() => window.open('mailto:demo@quickspace.com')}
+                        onClick={() => window.open('mailto:demo@starboost.com')}
                       >
                         <MessageSquareIcon size={20} className="text-blue-600" />
                         <div className="text-left">
                           <div className="font-medium">Email Us</div>
-                          <div className="text-sm text-gray-600">demo@quickspace.com</div>
+                          <div className="text-sm text-gray-600">demo@starboost.com</div>
                         </div>
                       </Button>
                     </div>
@@ -337,7 +344,7 @@ export const GetStarted = (): JSX.Element => {
               <Card className="border-0 shadow-lg bg-gray-50 rounded-2xl">
                 <CardContent className="p-6">
                   <div className="text-center">
-                    <h4 className="font-bold text-gray-900 mb-4">Why Choose Our Demo?</h4>
+                    <h4 className="font-bold text-gray-900 mb-4">Why Choose Our Strategy Session?</h4>
                     <div className="grid grid-cols-2 gap-4 text-sm">
                       <div className="flex items-center gap-2">
                         <CheckIcon size={16} className="text-green-500" />
@@ -353,7 +360,7 @@ export const GetStarted = (): JSX.Element => {
                       </div>
                       <div className="flex items-center gap-2">
                         <CheckIcon size={16} className="text-green-500" />
-                        <span className="text-gray-700">Custom setup</span>
+                        <span className="text-gray-700">Custom strategy</span>
                       </div>
                     </div>
                   </div>
@@ -372,10 +379,10 @@ export const GetStarted = (): JSX.Element => {
               </Badge>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
                 What Others Say About{" "}
-                <span className="text-blue-600">Our Demos</span>
+                <span className="text-blue-600">Our Strategy Sessions</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                See what our customers have to say about their demo experience with QuickSpace.
+                See what our customers have to say about their strategy session experience with StarBoost.
               </p>
             </div>
             
@@ -425,12 +432,12 @@ export const GetStarted = (): JSX.Element => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  question: "Is the demo really free?",
-                  answer: "Yes, absolutely! Our demos are completely free with no hidden costs or obligations."
+                  question: "Is the strategy session really free?",
+                  answer: "Yes, absolutely! Our strategy sessions are completely free with no hidden costs or obligations."
                 },
                 {
-                  question: "How long does the demo take?",
-                  answer: "Typically 30 minutes, but we can adjust based on your needs and questions."
+                  question: "How long does the session take?",
+                  answer: "Typically 30 minutes, but we can adjust based on your needs and questions about your online presence."
                 },
                 {
                   question: "What if I need to reschedule?",
@@ -438,15 +445,15 @@ export const GetStarted = (): JSX.Element => {
                 },
                 {
                   question: "Do I need to prepare anything?",
-                  answer: "Just bring your questions! We'll handle the rest and tailor the demo to your needs."
+                  answer: "Just bring your questions about online marketing! We'll handle the rest and tailor the session to your needs."
                 },
                 {
                   question: "Can multiple team members join?",
-                  answer: "Absolutely! We encourage team participation to ensure everyone's questions are answered."
+                  answer: "Absolutely! We encourage team participation to ensure everyone's online presence questions are answered."
                 },
                 {
-                  question: "What happens after the demo?",
-                  answer: "You'll get access to a free trial with full support. No pressure, just value."
+                  question: "What happens after the session?",
+                  answer: "You'll get access to a free trial with full support. No pressure, just value and results."
                 }
               ].map((faq, index) => (
                 <Card key={index} className="border-0 shadow-lg bg-white rounded-2xl">
@@ -474,11 +481,11 @@ export const GetStarted = (): JSX.Element => {
             
             <div className="relative z-10 text-center">
               <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Transform{" "}
-                <span className="text-blue-200">Your Business?</span>
+                Ready to Dominate{" "}
+                <span className="text-blue-200">Your Online Presence?</span>
               </h2>
               <p className="text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed mb-8">
-                Join thousands of businesses that have already discovered the power of QuickSpace. Your journey starts with just one call.
+                Join thousands of businesses that have already transformed their online presence with StarBoost. Your digital transformation starts with just one call.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -487,7 +494,7 @@ export const GetStarted = (): JSX.Element => {
                   className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
                 >
                   <CalendarIcon size={20} />
-                  Book Your Demo Now
+                  Book Your Strategy Session
                 </Button>
                 <Button
                   variant="outline"
@@ -511,10 +518,10 @@ export const GetStarted = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
             <div className="lg:col-span-1 space-y-6">
               <div className="text-2xl font-bold">
-                <span className="text-blue-400">→</span>QuickSpace
+                <span className="text-blue-400">⭐</span>StarBoost
               </div>
               <p className="text-gray-400 leading-relaxed">
-                Empowering businesses worldwide with innovative solutions.
+                Empowering businesses worldwide to dominate their online presence.
               </p>
             </div>
             
@@ -551,7 +558,7 @@ export const GetStarted = (): JSX.Element => {
           
           <div className="border-t border-gray-800 pt-8 text-center">
             <div className="text-gray-400">
-              © 2024 QuickSpace. All rights reserved.
+              © 2024 StarBoost. All rights reserved.
             </div>
           </div>
         </div>
