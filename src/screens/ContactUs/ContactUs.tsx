@@ -416,7 +416,7 @@ export const ContactUs = (): JSX.Element => {
                       <ClockIcon size={16} className="text-blue-600" />
                       <div className="text-xs text-gray-600 font-medium">Response</div>
                     </div>
-                    <div className="text-lg font-bold text-gray-900">< 2 min</div>
+                    <div className="text-lg font-bold text-gray-900">&lt; 2 min</div>
                     <div className="text-xs text-blue-600 font-medium">Average</div>
                   </div>
                 </div>
