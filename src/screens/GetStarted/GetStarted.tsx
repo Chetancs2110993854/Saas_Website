@@ -13,26 +13,16 @@ import {
   TrendingUpIcon,
   HeadphonesIcon,
   UsersIcon,
+  ExternalLinkIcon,
 } from "lucide-react";
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Navigation } from "../../components/Navigation";
 
 export const GetStarted = (): JSX.Element => {
-  useEffect(() => {
-    // Load Calendly widget script
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup script when component unmounts
-      document.body.removeChild(script);
-    };
-  }, []);
+  const [showCalendly, setShowCalendly] = useState(false);
 
   const benefits = [
     {
@@ -112,6 +102,11 @@ export const GetStarted = (): JSX.Element => {
     { value: "24/7", label: "Support Available", icon: <HeadphonesIcon size={20} className="text-green-600" /> },
     { value: "50K+", label: "Happy Customers", icon: <UsersIcon size={20} className="text-purple-600" /> }
   ];
+
+  const handleBookingClick = () => {
+    // Open Calendly in a new window/tab to avoid CORS issues
+    window.open('https://calendly.com/chetan3854/30min', '_blank', 'width=800,height=700');
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -258,7 +253,7 @@ export const GetStarted = (): JSX.Element => {
               </Card>
             </div>
             
-            {/* Right Column - Calendly Widget */}
+            {/* Right Column - Booking Interface */}
             <div className="space-y-6">
               <div className="text-center lg:text-left">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -269,33 +264,98 @@ export const GetStarted = (): JSX.Element => {
                 </p>
               </div>
               
-              {/* Calendly Widget Container */}
+              {/* Booking Card */}
               <Card className="border-0 shadow-xl bg-white rounded-2xl overflow-hidden">
-                <CardContent className="p-0">
-                  <div 
-                    className="calendly-inline-widget" 
-                    data-url="https://calendly.com/chetan3854/30min"
-                    style={{ minWidth: '320px', height: '700px' }}
-                  ></div>
+                <CardContent className="p-8">
+                  {/* Booking Illustration */}
+                  <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 mb-8">
+                    <div className="text-center">
+                      {/* Calendar Illustration */}
+                      <div className="w-24 h-24 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-6">
+                        <CalendarIcon size={40} className="text-blue-600" />
+                      </div>
+                      
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">
+                        Ready to Book Your Demo?
+                      </h4>
+                      <p className="text-gray-600 mb-6">
+                        Click below to open our booking calendar and select your preferred time slot.
+                      </p>
+                      
+                      {/* Booking Button */}
+                      <Button 
+                        onClick={handleBookingClick}
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3 mx-auto"
+                      >
+                        <CalendarIcon size={20} />
+                        Book Your 30-Minute Demo
+                        <ExternalLinkIcon size={16} />
+                      </Button>
+                      
+                      <p className="text-gray-500 text-sm mt-4">
+                        Opens in a new window • Completely free • No commitment
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Alternative Booking Methods */}
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <h5 className="font-bold text-gray-900 mb-4">Alternative Booking Methods</h5>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <Button 
+                        variant="outline" 
+                        className="flex items-center gap-2 p-4 h-auto"
+                        onClick={() => window.open('tel:+1234567890')}
+                      >
+                        <PhoneIcon size={20} className="text-green-600" />
+                        <div className="text-left">
+                          <div className="font-medium">Call Direct</div>
+                          <div className="text-sm text-gray-600">+1 (234) 567-890</div>
+                        </div>
+                      </Button>
+                      
+                      <Button 
+                        variant="outline" 
+                        className="flex items-center gap-2 p-4 h-auto"
+                        onClick={() => window.open('mailto:demo@quickspace.com')}
+                      >
+                        <MessageSquareIcon size={20} className="text-blue-600" />
+                        <div className="text-left">
+                          <div className="font-medium">Email Us</div>
+                          <div className="text-sm text-gray-600">demo@quickspace.com</div>
+                        </div>
+                      </Button>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
               
-              {/* Contact Alternative */}
+              {/* Trust Indicators */}
               <Card className="border-0 shadow-lg bg-gray-50 rounded-2xl">
-                <CardContent className="p-6 text-center">
-                  <h4 className="font-bold text-gray-900 mb-3">Prefer to Talk Now?</h4>
-                  <p className="text-gray-600 mb-4">
-                    Can't find a suitable time? Contact us directly and we'll arrange a call.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button variant="outline" className="flex items-center gap-2">
-                      <PhoneIcon size={16} />
-                      Call Us
-                    </Button>
-                    <Button variant="outline" className="flex items-center gap-2">
-                      <MessageSquareIcon size={16} />
-                      Live Chat
-                    </Button>
+                <CardContent className="p-6">
+                  <div className="text-center">
+                    <h4 className="font-bold text-gray-900 mb-4">Why Choose Our Demo?</h4>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <CheckIcon size={16} className="text-green-500" />
+                        <span className="text-gray-700">No sales pressure</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckIcon size={16} className="text-green-500" />
+                        <span className="text-gray-700">Expert guidance</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckIcon size={16} className="text-green-500" />
+                        <span className="text-gray-700">Instant trial access</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckIcon size={16} className="text-green-500" />
+                        <span className="text-gray-700">Custom setup</span>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -374,7 +434,7 @@ export const GetStarted = (): JSX.Element => {
                 },
                 {
                   question: "What if I need to reschedule?",
-                  answer: "No problem! You can easily reschedule or cancel your appointment anytime."
+                  answer: "No problem! You can easily reschedule or cancel your appointment anytime through the booking link."
                 },
                 {
                   question: "Do I need to prepare anything?",
@@ -422,7 +482,10 @@ export const GetStarted = (): JSX.Element => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2">
+                <Button 
+                  onClick={handleBookingClick}
+                  className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
+                >
                   <CalendarIcon size={20} />
                   Book Your Demo Now
                 </Button>
