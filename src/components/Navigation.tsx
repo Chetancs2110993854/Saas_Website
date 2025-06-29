@@ -33,15 +33,46 @@ export const Navigation = () => {
             >
               About
             </Link>
-            <a href="#features" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+            <Link 
+              to="/features" 
+              className={`font-medium transition-colors duration-200 ${
+                location.pathname === '/features' 
+                  ? 'text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Features
-            </a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+            </Link>
+            <Link 
+              to="/blogs" 
+              className={`font-medium transition-colors duration-200 ${
+                location.pathname === '/blogs' 
+                  ? 'text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              Blog
+            </Link>
+            <Link 
+              to="/pricing" 
+              className={`font-medium transition-colors duration-200 ${
+                location.pathname === '/pricing' 
+                  ? 'text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Pricing
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`font-medium transition-colors duration-200 ${
+                location.pathname === '/contact' 
+                  ? 'text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">
